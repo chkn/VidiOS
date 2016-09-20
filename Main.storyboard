@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="24">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Contact View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="6" customClass="ContactViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3"/>
+                        <viewControllerLayoutGuide type="bottom" id="4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the detail!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="109">
+                                <rect key="frame" x="219" y="139" width="151" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="213" customClass="CallButton">
+                                <rect key="frame" x="269" y="400" width="50" height="50"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="109" secondAttribute="centerX" constant="6" id="211"/>
+                            <constraint firstItem="109" firstAttribute="centerY" secondItem="7" secondAttribute="centerY" multiplier="0.5" id="212"/>
+                            <constraint firstItem="213" firstAttribute="bottom" secondItem="7" secondAttribute="bottom" multiplier="0.75" id="220"/>
+                            <constraint firstAttribute="centerX" secondItem="213" secondAttribute="centerX" constant="6" id="221"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="CallButton" destination="213" id="name-outlet-213"/>
+                        <outlet property="Name" destination="109" id="name-outlet-109"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="367"/>
+        </scene>
+        <!--Contacts-->
+        <scene sceneID="9">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="10" customClass="ContactsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" id="12">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="55" id="15" customClass="ContactCell">
+                                <rect key="frame" x="0.0" y="28" width="600" height="55"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="15" id="16">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="54.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88" customClass="CallButton">
+                                            <rect key="frame" x="530" y="3" width="50" height="50"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="Alex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96">
+                                            <rect key="frame" x="20" y="17" width="502" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="88" secondAttribute="trailing" constant="20" id="89"/>
+                                        <constraint firstItem="88" firstAttribute="centerY" secondItem="16" secondAttribute="centerY" id="90"/>
+                                        <constraint firstItem="88" firstAttribute="leading" secondItem="96" secondAttribute="trailing" constant="8" id="98"/>
+                                        <constraint firstItem="96" firstAttribute="centerY" secondItem="16" secondAttribute="centerY" id="99"/>
+                                        <constraint firstItem="96" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" id="102"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="CallButton" destination="88" id="name-outlet-88"/>
+                                    <outlet property="Name" destination="96" id="name-outlet-96"/>
+                                    <segue destination="6" kind="showDetail" id="206"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="10" id="13"/>
+                            <outlet property="delegate" destination="10" id="14"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Contacts" id="11"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1043" y="-405"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="18">
+            <objects>
+                <navigationController id="19" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="21">
+                        <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="10" kind="relationship" relationship="rootViewController" id="20"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="352" y="-392"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="23">
+            <objects>
+                <splitViewController id="24" customClass="SplitViewController" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="19" kind="relationship" relationship="masterViewController" id="25"/>
+                        <segue destination="6" kind="relationship" relationship="detailViewController" id="26"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="27" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-325" y="-100"/>
+        </scene>
+        <!--Call View Controller-->
+        <scene sceneID="230">
+            <objects>
+                <viewController storyboardIdentifier="CallViewController" modalTransitionStyle="crossDissolve" id="231" customClass="CallViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="228"/>
+                        <viewControllerLayoutGuide type="bottom" id="229"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="232">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="241" customClass="CallView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="253" customClass="CallButton">
+                                <rect key="frame" x="275" y="530" width="50" height="50"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="334" misplaced="YES">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="600"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="335">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="600"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="347">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="600"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="349">
+                                                <size key="itemSize" width="170" height="100"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NoveltyCell" id="348" customClass="NoveltyCell">
+                                                    <rect key="frame" x="15" y="0.0" width="170" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="15" y="0.0" width="170" height="100"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="361">
+                                                                <rect key="frame" x="0.0" y="0.0" width="170" height="100"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstItem="361" firstAttribute="leading" secondItem="348" secondAttribute="leading" id="362"/>
+                                                        <constraint firstItem="361" firstAttribute="top" secondItem="348" secondAttribute="top" id="363"/>
+                                                        <constraint firstItem="361" firstAttribute="trailing" secondItem="348" secondAttribute="trailing" id="364"/>
+                                                        <constraint firstItem="361" firstAttribute="bottom" secondItem="348" secondAttribute="bottom" id="365"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="ImageView" destination="361" id="name-outlet-361"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="347" firstAttribute="leading" secondItem="335" secondAttribute="leading" id="357"/>
+                                        <constraint firstItem="347" firstAttribute="top" secondItem="335" secondAttribute="top" id="358"/>
+                                        <constraint firstItem="347" firstAttribute="trailing" secondItem="335" secondAttribute="trailing" id="359"/>
+                                        <constraint firstItem="347" firstAttribute="bottom" secondItem="335" secondAttribute="bottom" id="360"/>
+                                    </constraints>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                                    </variation>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="346"/>
+                                    <constraint firstAttribute="height" constant="200" id="383"/>
+                                </constraints>
+                                <blurEffect style="extraLight"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="383"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="346"/>
+                                        <include reference="383"/>
+                                    </mask>
+                                    <rect key="frame" x="0.0" y="600" width="400" height="200"/>
+                                </variation>
+                            </visualEffectView>
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="246">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem title="Title" id="247">
+                                        <barButtonItem key="leftBarButtonItem" image="wand.png" id="274">
+                                            <connections>
+                                                <action selector="OnNoveltyShowHide:" destination="231" id="397"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="310" customClass="SelfView" clipsSubviews="YES">
+                                <rect key="frame" x="430" y="372" width="150" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="314"/>
+                                    <constraint firstAttribute="width" constant="150" id="324"/>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="230" y="372" width="150" height="150"/>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="241" firstAttribute="leading" secondItem="232" secondAttribute="leading" id="242"/>
+                            <constraint firstItem="241" firstAttribute="trailing" secondItem="232" secondAttribute="trailing" id="244"/>
+                            <constraint firstItem="246" firstAttribute="leading" secondItem="232" secondAttribute="leading" id="275"/>
+                            <constraint firstItem="246" firstAttribute="trailing" secondItem="232" secondAttribute="trailing" id="276"/>
+                            <constraint firstItem="246" firstAttribute="top" secondItem="228" secondAttribute="bottom" id="277"/>
+                            <constraint firstItem="229" firstAttribute="top" secondItem="253" secondAttribute="bottom" constant="20" id="306"/>
+                            <constraint firstItem="253" firstAttribute="centerX" secondItem="232" secondAttribute="centerX" id="307"/>
+                            <constraint firstItem="241" firstAttribute="bottom" secondItem="232" secondAttribute="bottom" id="308"/>
+                            <constraint firstItem="241" firstAttribute="top" secondItem="232" secondAttribute="top" id="309"/>
+                            <constraint firstAttribute="trailing" secondItem="310" secondAttribute="trailing" constant="20" id="322"/>
+                            <constraint firstItem="253" firstAttribute="top" secondItem="310" secondAttribute="bottom" constant="8" id="323"/>
+                            <constraint firstItem="334" firstAttribute="top" secondItem="232" secondAttribute="top" id="336"/>
+                            <constraint firstItem="334" firstAttribute="leading" secondItem="232" secondAttribute="leading" id="337" constant="-200"/>
+                            <constraint firstItem="232" firstAttribute="bottom" secondItem="334" secondAttribute="bottom" id="338"/>
+                            <constraint firstItem="334" firstAttribute="trailing" secondItem="241" secondAttribute="trailing" id="375"/>
+                            <constraint id="391" firstItem="334" firstAttribute="top" secondItem="253" secondAttribute="bottom" constant="20"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="375"/>
+                                <exclude reference="391"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="336"/>
+                                <include reference="375"/>
+                                <exclude reference="306"/>
+                                <include reference="391"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="CallButton" destination="253" id="name-outlet-253"/>
+                        <outlet property="CallView" destination="241" id="name-outlet-241"/>
+                        <outlet property="NavBar" destination="246" id="name-outlet-246"/>
+                        <outlet property="NoveltyList" destination="347" id="name-outlet-347"/>
+                        <outlet property="SelfView" destination="310" id="name-outlet-310"/>
+                        <outlet property="TapRecognizer" destination="285" id="name-outlet-285"/>
+                        <outlet property="NoveltyLeadingConstraint" destination="337" id="name-outlet-337"/>
+                        <outlet property="NoveltyBottomConstraint" destination="338" id="name-outlet-338"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="233" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="285">
+                    <connections>
+                        <action selector="OnTapped:" destination="231" id="286"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1070" y="494"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="wand.png" width="22.5" height="22"/>
+        <image name="vidcam.png" width="33" height="20"/>
+        <image name="hat1.png" width="169" height="100"/>
+        <image name="hat2.png" width="169" height="100"/>
+        <image name="hat3.png" width="169" height="100"/>
+        <image name="mustache1.png" width="169" height="50"/>
+        <image name="mustache2.png" width="169" height="50"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="206"/>
+    </inferredMetricsTieBreakers>
+</document>
